@@ -17,7 +17,7 @@ Just copy/paste the command below in your terminal and execute it.
   <input class='form-control input-lg' readonly='readonly' type='text' value='curl -O https://cli-dl.scalingo.io/install &amp;&amp; bash install' style='background-color:white;font-size: 22px;'>
 </div>
 
-## Document and features
+## Documentation and features
 
 Read everything in our [Documentation Center](http://doc.scalingo.com/app/command-line-tool.html).
 
@@ -73,7 +73,7 @@ __1.3.0__
 * [Bugfix - Env] Remove arguments validation, that's server role, and it changes sometimes
 * [Bugfix - Env] Add quotes in output of env-set to avoid copy/paste problem with the final period
 * [Bugfix - Scale] Fix error management when application is already restarting or scaling [#195](https://github.com/Scalingo/cli/issues/195)
-* [Bugfix - Tunnel] Fix panic when authentication fails when building SSH tunnel 
+* [Bugfix - Tunnel] Fix panic when authentication fails when building SSH tunnel
 * [Bugfix - Tunnel] Fix double error handling when binding local port [#202](https://github.com/Scalingo/cli/issues/202)
 * [Bugfix] Fix install script on Mac OS X El Capitan 10.11
 
