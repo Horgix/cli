@@ -55,6 +55,21 @@ The client is developed with Go. Therefore, there is no external dependency.
 
 ## Changelog
 
+__1.4.0__
+
+* [Feature] Add timeline and user-timeline to display per are of user-global activities [#235](https://github.com/Scalingo/cli/issues/235)
+* [Feature] Add list, remove and add commands for notifications
+* [Feature] Add `deployments` command to get the a deployments list for an application [#222](https://github.com/Scalingo/cli/issues/222) [#234](https://github.com/Scalingo/cli/issues/234)
+* [Feature] Add `deployment-logs` command to get logs for a specific deployment
+* [Feature] Add `deployment-follow` command to follow the deployment stream for an application
+* [Feature - Login] Automatically try SSH with ssh-agent if available [#262](https://github.com/Scalingo/cli/issues/262)
+* [Feature - Create] --buildpack flag to specify a custom buildpack
+* [Fix] Fix error handling when an addon fails to get provisioned [#252](https://github.com/Scalingo/cli/issues/252)
+* [Fix] Fix error display when an application doesn't have any log available [#249](https://github.com/Scalingo/cli/issues/249)
+* [Fix] Fix error display when connection to the SSH server fails [#242](https://github.com/Scalingo/cli/issues/242)
+* [Fix] Password typing error on windows (ReadConsoleInput error) [#237](https://github.com/Scalingo/cli/issues/237)
+* [Fix] Login command logs twice [#258](https://github.com/Scalingo/cli/issues/258)
+
 __1.3.1__
 
 * [Bugfix - Auth] Fix authentication configuration for --ssh or --apikey, two attempts were necessary [#208](https://github.com/Scalingo/cli/issues/208) [#209](https://github.com/Scalingo/cli/issues/209)
