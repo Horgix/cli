@@ -55,6 +55,22 @@ The client is developed with Go. Therefore, there is no external dependency.
 
 ## Changelog
 
+__1.5.0__
+
+
+* [Feature] Add `deploy` command to deploy a tarball or a war archive directly
+
+```
+scalingo deploy archive.tar.gz
+scalingo deploy project.war
+scalingo deploy https://github.com/Scalingo/sample-go-martini/archive/master.tar.gz
+```
+
+__1.4.1__
+
+* [Fix] Fix error message when a user tries to break its free trial before the end [#458](https://github.com/Scalingo/cli/issue/458)
+* [Feature] Add `influxdb-console` to run an influxdb interactive shell in a one-off container
+
 __1.4.0__
 
 * [Feature] Add timeline and user-timeline to display per are of user-global activities [#235](https://github.com/Scalingo/cli/issues/235)
