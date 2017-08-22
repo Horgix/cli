@@ -58,7 +58,7 @@ The client is developed with Go. Therefore, there is no external dependency.
 __1.6.0__
 
 * [Mongo Console Add replicaset support to correctly connect to them [#306](https://github.com/Scalingo/cli/issues/306)
-* [Notificatiers] Add Notifiers related commands [#303](https://github.com/Scalingo/cli/issues/303) [#301](https://github.com/Scalingo/cli/issues/301) [#297](https://github.com/Scalingo/cli/issues/297) [#296](https://github.com/Scalingo/cli/issues/296):
+* [Notifiers] Add Notifiers related commands [#303](https://github.com/Scalingo/cli/issues/303) [#301](https://github.com/Scalingo/cli/issues/301) [#297](https://github.com/Scalingo/cli/issues/297) [#296](https://github.com/Scalingo/cli/issues/296):
 
 ```
      notifiers          List your notifiers
