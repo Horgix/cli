@@ -55,6 +55,26 @@ The client is developed with Go. Therefore, there is no external dependency.
 
 ## Changelog
 
+__1.6.0__
+
+* [Mongo Console Add replicaset support to correctly connect to them [#306](https://github.com/Scalingo/cli/issues/306)
+* [Notificatiers] Add Notifiers related commands [#303](https://github.com/Scalingo/cli/issues/303) [#301](https://github.com/Scalingo/cli/issues/301) [#297](https://github.com/Scalingo/cli/issues/297) [#296](https://github.com/Scalingo/cli/issues/296):
+
+```
+     notifiers          List your notifiers
+     notifiers-details  Show details of your notifiers
+     notifiers-add      Add a notifier for your application
+     notifiers-update   Update a notifier
+     notifiers-remove   Remove an existing notifier from your app
+```
+
+* [Notifications] Feature removed, replaced by notifiers, all the notifications have been migrated to notifiers [#307](https://github.com/Scalingo/cli/issues/307)
+* [Internals] Migrate to original `urfave/cli` instead of using our own fork of the library [#290](https://github.com/Scalingo/cli/issues/290)
+* [Update] Add timeout in update checking to avoid the CLI to freeze when GitHub is down for instance [#274](https://github.com/Scalingo/cli/issues/274)
+* [Auth] When authentication file is corrupted, recreate a new one instead of crashing [#283](https://github.com/Scalingo/cli/issues/283)
+* [Logs-archive] Logs archives are now listable and downloadable from the CLI [#289](https://github.com/Scalingo/cli/issues/289)
+* [Logs] Lines are now colored according to the source of the line [#286](https://github.com/Scalingo/cli/issues/286)
+
 __1.5.0__
 
 
