@@ -55,6 +55,14 @@ The client is developed with Go. Therefore, there is no external dependency.
 
 ## Changelog
 
+__1.7.0__
+
+* [Commands] Add `rename` command to rename an application [#330](https://github.com/Scalingo/cli/issues/330)
+* [One-off] Better inactivity timeout error message [#323](https://github.com/Scalingo/cli/issues/323)
+* [DB Console] Add support for TLS connection to databases [#312](https://github.com/Scalingo/cli/issues/312)
+* [Bugfix] Bad autocompletion on -a, --app, -r, --remote flags when they are the first argument of a command [#317](https://github.com/Scalingo/cli/issues/317)
+* [Bugfix] TTY size was not sent when launching a `run` command [#326](https://github.com/Scalingo/cli/issues/326)
+
 __1.6.0__
 
 * [Mongo Console Add replicaset support to correctly connect to them [#306](https://github.com/Scalingo/cli/issues/306)
