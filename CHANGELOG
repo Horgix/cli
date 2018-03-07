@@ -4,11 +4,12 @@ Changelog
 ### To be Released
 
 * [alerts] Add all command to CRUD alerts
+* [Commands] Update scale commands to accept flags to create an autoscaler
 
 ### 1.8.0
 
-* [logs] accepts filter for postdeploy and one-off container
-* [authentication] use of the new authentication API `auth.scalingo.com`
+* [Logs] accepts filter for postdeploy and one-off container
+* [Authentication] use of the new authentication API `auth.scalingo.com`
 
 ### 1.7.0
 
