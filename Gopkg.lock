@@ -21,8 +21,13 @@
     "debug",
     "io"
   ]
-  revision = "b1a1f7bec6aaec90e90a1b6e35ecff2554f44197"
-  version = "v1.2.0"
+  revision = "774a0cc9c6b73eee6218a63a2d699dbb5afb35f5"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/Scalingo/gopassword"
+  packages = ["."]
+  revision = "27d6fc05ae4d0cba5a5c646925f3aec369353ca1"
 
 [[projects]]
   branch = "master"
