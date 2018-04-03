@@ -6,13 +6,11 @@ import (
 
 type AutoscalersService interface {
 	AutoscalersList(app string) ([]Autoscaler, error)
-	AutoscalerAdd(app string, email string) (Autoscaler, error)
+	AutoscalerAdd(app string, params AutoscalerAddParams) (*Autoscaler, error)
 	AutoscalerRemove(app string, id string) error
 }
 
-type AutoscalersClient struct {
-	subresourceClient
-}
+var _ AutoscalersService = (*Client)(nil)
 
 type Autoscaler struct {
 	ID            string  `json:"id"`
@@ -32,7 +30,7 @@ type AutoscalerRes struct {
 	Autoscaler Autoscaler `json:"autoscaler"`
 }
 
-func (c *AutoscalersClient) AutoscalersList(app string) ([]Autoscaler, error) {
+func (c *Client) AutoscalersList(app string) ([]Autoscaler, error) {
 	var autoscalersRes AutoscalersRes
 	err := c.subresourceList(app, "autoscalers", nil, &autoscalersRes)
 	if err != nil {
@@ -49,7 +47,7 @@ type AutoscalerAddParams struct {
 	MaxContainers int     `json:"max_containers"`
 }
 
-func (c *AutoscalersClient) AutoscalerAdd(app string, params AutoscalerAddParams) (*Autoscaler, error) {
+func (c *Client) AutoscalerAdd(app string, params AutoscalerAddParams) (*Autoscaler, error) {
 	var autoscalerRes AutoscalerRes
 	err := c.subresourceAdd(app, "autoscalers", AutoscalerRes{
 		Autoscaler: Autoscaler{
@@ -66,7 +64,7 @@ func (c *AutoscalersClient) AutoscalerAdd(app string, params AutoscalerAddParams
 	return &autoscalerRes.Autoscaler, nil
 }
 
-func (c *AutoscalersClient) AutoscalerShow(app, id string) (*Autoscaler, error) {
+func (c *Client) AutoscalerShow(app, id string) (*Autoscaler, error) {
 	var autoscalerRes AutoscalerRes
 	err := c.subresourceGet(app, "autoscalers", id, nil, &autoscalerRes)
 	if err != nil {
@@ -83,7 +81,7 @@ type AutoscalerUpdateParams struct {
 	Disabled      *bool    `json:"disabled,omitempty"`
 }
 
-func (c *AutoscalersClient) AutoscalerUpdate(app, id string, params AutoscalerUpdateParams) (*Autoscaler, error) {
+func (c *Client) AutoscalerUpdate(app, id string, params AutoscalerUpdateParams) (*Autoscaler, error) {
 	var autoscalerRes AutoscalerRes
 	err := c.subresourceUpdate(app, "autoscalers", id, params, &autoscalerRes)
 	if err != nil {
@@ -92,7 +90,7 @@ func (c *AutoscalersClient) AutoscalerUpdate(app, id string, params AutoscalerUp
 	return &autoscalerRes.Autoscaler, nil
 }
 
-func (c *AutoscalersClient) AutoscalerRemove(app, id string) error {
+func (c *Client) AutoscalerRemove(app, id string) error {
 	err := c.subresourceDelete(app, "autoscalers", id)
 	if err != nil {
 		return errgo.Mask(err)
