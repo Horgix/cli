@@ -48,6 +48,7 @@ var _ API = (*Client)(nil)
 type Client struct {
 	tokenGenerator TokenGenerator
 	endpoint       string
+	authEndpoint   string
 	TLSConfig      *tls.Config
 	apiVersion     string
 	httpClient     HTTPClient
@@ -56,9 +57,11 @@ type Client struct {
 type ClientConfig struct {
 	Timeout        time.Duration
 	Endpoint       string
+	AuthEndpoint   string
 	TLSConfig      *tls.Config
 	TokenGenerator TokenGenerator
 	APIVersion     string
+	APIToken       string
 }
 
 func NewClient(cfg ClientConfig) *Client {
@@ -79,6 +82,7 @@ func NewClient(cfg ClientConfig) *Client {
 	c := Client{
 		tokenGenerator: cfg.TokenGenerator,
 		endpoint:       cfg.Endpoint,
+		authEndpoint:   cfg.AuthEndpoint,
 		apiVersion:     cfg.APIVersion,
 		TLSConfig:      cfg.TLSConfig,
 		httpClient: &http.Client{
@@ -88,6 +92,10 @@ func NewClient(cfg ClientConfig) *Client {
 				TLSClientConfig: cfg.TLSConfig,
 			},
 		},
+	}
+
+	if len(cfg.APIToken) != 0 && c.tokenGenerator == nil {
+		c.tokenGenerator = c.GetAPITokenGenerator(cfg.APIToken)
 	}
 
 	return &c
